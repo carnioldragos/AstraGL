@@ -6,6 +6,8 @@
 
 Clean, sharp, smooth playback — every post-processing filter runs live on the GPU.
 
+[⬇️ Download latest release](../../releases/latest)
+
 </div>
 
 ---
