@@ -12,6 +12,14 @@ Clean, sharp, smooth playback — every post-processing filter runs live on the 
 
 ---
 
+> 💡 **This is the free trial version** — same engine, same enhancements, no cut
+> corners. Two limits apply: a brief on-screen watermark during playback, and
+> play sessions capped at 15 minutes (just restart the app to keep watching).
+> Want both gone — forever, one-time purchase?
+> [Get the full license here](https://carnio0.gumroad.com/l/mtmhki).
+
+---
+
 ## Overview
 
 AstraGL Player is an Electron + WebGL2 video player built around a real-time
@@ -111,6 +119,15 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
 
 ---
 
+## 💻 Requirements
+
+- Windows 10 / 11 (64-bit)
+- GPU: NVIDIA RTX 20-series / AMD RX 5000-series or newer
+- The app itself is ~130 MB; FFmpeg (optional, see below) is a separate ~160 MB
+  download that unpacks to ~400+ MB on disk
+
+---
+
 ## 🚀 Download & Run
 
 1. Download `AstraGLPlayer.exe` from the [Releases](../../releases) page.
@@ -119,8 +136,16 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
    FFmpeg is required for legacy and incompatible formats (AVI, DivX, MPEG-2,
    AC3/DTS audio, etc.) — used for demuxing, transcoding, and re-encoding on the
    fly so the player can handle files that WebCodecs cannot decode natively.
-   Fetched directly from [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) (~190 MB,
-   one-time download, stored locally).
+   Fetched directly from [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) (~160 MB
+   archive, ~400+ MB once unpacked, stored locally).
+
+---
+
+## 🔓 Full License
+
+The trial is fully functional — try everything before you buy. Ready to remove
+the watermark and session limit for good? Get the full license, one-time
+purchase, here: **[carnio0.gumroad.com/l/mtmhki](https://carnio0.gumroad.com/l/mtmhki)**
 
 ---
 
