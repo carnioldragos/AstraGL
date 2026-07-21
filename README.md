@@ -130,8 +130,9 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
 
 ## 🚀 Download & Run
 
-1. Download `AstraGLPlayer.exe` from the [Releases](../../releases) page.
-2. Run it — no installation needed (portable).
+1. Download **`AstraGL Player v1.0.0.f (Final)`** from the [Releases](../../releases)
+   page — a ready-to-play kit, no installation needed (portable).
+2. Unzip it and run `AstraGL Player.exe`.
 3. On first launch, the app will offer a one-click **"Download FFmpeg"** button.
    FFmpeg is required for legacy and incompatible formats (AVI, DivX, MPEG-2,
    AC3/DTS audio, etc.) — used for demuxing, transcoding, and re-encoding on the
