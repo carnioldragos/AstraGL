@@ -101,7 +101,8 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
 - Adjustable size and **drag-to-reposition** (Ctrl + click/drag).
 
 ### Extras
-- **AstraGL Cast** — stream the current file to a TV/device on your LAN.
+- **AstraGL Cast** — stream the current file to any device on your LAN (Android,
+  smart TV, another PC) via VLC or any player that supports "Open Network Stream."
 - Frameless custom title bar, fullscreen, and a polished floating control panel.
 
 ---
