@@ -170,4 +170,4 @@ MP4Box.js, 7-Zip, etc.). No GPL-licensed binaries are bundled with the app.
 
 - **Developed by** — Sonic Vibes *aka* Carniol Dragos · carnioldragos@gmail.com
 - **Beta testing** — Rizea Valentin
-- ☕ Support: [ko-fi.com/sonicvibes](https://ko-fi.com/sonicvibes)
+- ☕ Support us: [ko-fi.com/sonicvibes](https://ko-fi.com/sonicvibes)
