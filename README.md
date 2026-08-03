@@ -168,7 +168,7 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
 
 - Windows 10 / 11 (64-bit)
 - GPU: NVIDIA RTX 20-series / AMD RX 5000-series or newer
-- The app itself is ~130 MB; FFmpeg (optional, see below) is a separate ~160 MB
+- The app itself is ~250 MB unpacked; FFmpeg (optional, see below) is a separate ~160 MB
   download that unpacks to ~400+ MB on disk
 
 ---
