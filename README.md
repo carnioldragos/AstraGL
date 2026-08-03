@@ -6,16 +6,17 @@
 
 Clean, sharp, smooth playback — every post-processing filter runs live on the GPU.
 
-[⬇️ Download latest release](../../releases/latest)
+[⬇️ Download latest release](../../releases/latest) · [📋 What's new in v1.1.0](CHANGELOG.md)
 
 </div>
 
 ---
 
 > 💡 **14-day full trial** — the complete player, with every enhancement enabled,
-> no watermark, and no playback/session limit. After 14 calendar days, activate
-> AstraGL Player with a one-time license to continue watching. Internet is
-> required once to register the trial; afterward it can be used offline.
+> no watermark, and no playback/session limit. After the 14 calendar days it
+> keeps working as a demo (5 minutes of playback per launch, with a watermark)
+> until activated. Internet is required once to register the trial; afterward it
+> can be used offline.
 > [Get the full license here](https://carnio0.gumroad.com/l/mtmhki).
 
 ---
@@ -194,7 +195,9 @@ Trial registration sends only a pseudonymous SHA-256 identifier derived locally
 from the Windows installation ID, plus the app version. The original Windows
 identifier, name, email, and media information are never sent. Internet is
 required only once to obtain the signed trial token.
-After the trial expires, activate the player with a one-time license:
+After the 14 days the player continues as a demo — 5 minutes of playback per
+launch, with a watermark — so your files never become unplayable. Remove every
+limit permanently with a one-time license:
 **[carnio0.gumroad.com/l/mtmhki](https://carnio0.gumroad.com/l/mtmhki)**
 
 ---
