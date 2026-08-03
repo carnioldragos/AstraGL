@@ -12,10 +12,10 @@ Clean, sharp, smooth playback — every post-processing filter runs live on the 
 
 ---
 
-> 💡 **This is the free trial version** — same engine, same enhancements, no cut
-> corners. Two limits apply: a brief on-screen watermark during playback, and
-> play sessions capped at 15 minutes (just restart the app to keep watching).
-> Want both gone — forever, one-time purchase?
+> 💡 **14-day full trial** — the complete player, with every enhancement enabled,
+> no watermark, and no playback/session limit. After 14 calendar days, activate
+> AstraGL Player with a one-time license to continue watching. Internet is
+> required once to register the trial; afterward it can be used offline.
 > [Get the full license here](https://carnio0.gumroad.com/l/mtmhki).
 
 ---
@@ -59,10 +59,26 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
 - **Object Motion Blur** — per-pixel directional blur on moving objects (using
   the optical-flow field), independent of camera motion.
 
+### Depth & presentation
+- **Parallax Mode** — a real-time sense of depth on ordinary 2D video, built
+  entirely from classical geometry and optics in the shader: ground-perspective
+  priors, shape-from-defocus cues, RANSAC-stabilized camera motion and sparse
+  structure-from-motion. No neural network, no depth model, no glasses. Depth is
+  grouped into softly separated layers with edge protection, temporal confidence
+  gating and scene-cut warm-up, so it stays conservative when the scene doesn't
+  support it.
+- **Micro Relief** — lighting derived from smooth depth gradients, giving curved
+  surfaces more perceived volume. Limited to stable surface interiors, so it
+  never turns silhouettes into emboss or halos.
+- **Depth Grading** — luminance-preserving atmospheric separation: nearer planes
+  slightly warmer and more saturated, distant planes cooler and softer.
+
 ### Color & Tone
 - **Contrast**, **Gamma**, **Saturation**, **Shadow Lift** — global grading.
 - **Highlight Boost** — SDR→HDR highlight lift for HDR monitors viewing SDR
   content.
+- **Micro Contrast** — restrained local tonal separation for legacy SD sources,
+  without crushing blacks or clipping highlights.
 
 ### HDR
 - Automatic detection of **HDR10 / PQ / HLG** and **Dolby Vision**.
@@ -86,12 +102,26 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
   more.
 - **GPU Upscale (Bicubic+)** — Mitchell–Netravali bicubic upscaling for SD/720p
   on 4K displays.
+- **Super Upscale 8K** — experimental final reconstruction pass at up to
+  7680×4320, preserving the source aspect ratio. Decode and the main filter
+  chain stay at source resolution, so the cost is far lower than running the
+  whole pipeline at 8K. Driver texture/renderbuffer limits are checked
+  automatically and the option disables itself on unsupported hardware.
+- **4K Conversion Downscale** — optional hardware path that converts 4K SDR/HDR
+  to 1440p for more headroom on lighter GPUs.
 - **De-telecine (IVTC)** — removes 3:2 pulldown from NTSC DVD content.
 
 ### Audio
 - **Voice Clarity** — dynamic compressor that lifts dialogue over music/effects.
 - **Loudnorm (EBU R128)** — normalizes loudness to −19 LUFS, evening out quiet
   scenes vs. loud action.
+- **Audio Output** — Auto / Stereo / Surround. Auto keeps multichannel output
+  when the device supports it, Stereo performs a dialogue-safe downmix, and
+  Surround preserves 5.1/7.1 (converting browser-incompatible formats such as
+  DTS to multichannel AAC when needed).
+- **3D Enhance** — Mid-Side stereo widening with automatic center-channel
+  compensation, so dialogue stays forward as the soundstage widens.
+- **Bass Boost** — low-frequency shelf, 0–8 dB.
 - **Audio-track selection** and a **default audio-language** preference
   (auto-picks your language on open, falls back to English, then the first track).
 - Volume boost beyond 100% via the Web Audio API.
@@ -103,6 +133,13 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
 ### Extras
 - **AstraGL Cast** — stream the current file to any device on your LAN (Android,
   smart TV, another PC) via VLC or any player that supports "Open Network Stream."
+- **Instant A/B comparison** (`A`) — cycles between the untouched original, a
+  vertical split-screen, and normal playback. Both sides share identical framing
+  and filters, so the visible difference is only what you're evaluating.
+- **Diagnostics overlay** (`C`) — source/decoded/render resolution and active
+  render path, color pipeline and bit depth, frame pacing against the display's
+  VSync budget, audio route and buffer health. A second press reveals the
+  internal view (decoder queues, per-stage GPU timings, audio event counters).
 - Frameless custom title bar, fullscreen, and a polished floating control panel.
 
 ---
@@ -115,6 +152,9 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
 | `←` / `→` | Seek −10s / +10s |
 | `Ctrl + ←` / `Ctrl + →` | Step one frame back / forward |
 | `M` | Mute |
+| `A` | A/B comparison — original, split-screen, normal |
+| `C` | Diagnostics overlay — hidden, essential, full |
+| `G` | GPU debug views (filter masks, depth map) |
 | `Numpad 4 / 5 / 6` | Aspect ratio narrower / reset / wider |
 | Double-click | Toggle fullscreen |
 
@@ -131,7 +171,7 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
 
 ## 🚀 Download & Run
 
-1. Download **`AstraGL Player v1.0.0.f (Final)`** from the [Releases](../../releases)
+1. Download **`AstraGL Player v1.1.0`** from the [Releases](../../releases)
    page — a ready-to-play kit, no installation needed (portable).
 2. Unzip it and run `AstraGL Player.exe`.
 3. On first launch, the app will offer a one-click **"Download FFmpeg"** button.
@@ -145,9 +185,13 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
 
 ## 🔓 Full License
 
-The trial is fully functional — try everything before you buy. Ready to remove
-the watermark and session limit for good? Get the full license, one-time
-purchase, here: **[carnio0.gumroad.com/l/mtmhki](https://carnio0.gumroad.com/l/mtmhki)**
+The 14-day trial is fully functional, without a watermark or session limits.
+Trial registration sends only a pseudonymous SHA-256 identifier derived locally
+from the Windows installation ID, plus the app version. The original Windows
+identifier, name, email, and media information are never sent. Internet is
+required only once to obtain the signed trial token.
+After the trial expires, activate the player with a one-time license:
+**[carnio0.gumroad.com/l/mtmhki](https://carnio0.gumroad.com/l/mtmhki)**
 
 ---
 
