@@ -60,18 +60,22 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
   the optical-flow field), independent of camera motion.
 
 ### Depth & presentation
-- **Parallax Mode** — a real-time sense of depth on ordinary 2D video, built
-  entirely from classical geometry and optics in the shader: ground-perspective
-  priors, shape-from-defocus cues, RANSAC-stabilized camera motion and sparse
-  structure-from-motion. No neural network, no depth model, no glasses. Depth is
-  grouped into softly separated layers with edge protection, temporal confidence
-  gating and scene-cut warm-up, so it stays conservative when the scene doesn't
-  support it.
-- **Micro Relief** — lighting derived from smooth depth gradients, giving curved
-  surfaces more perceived volume. Limited to stable surface interiors, so it
-  never turns silhouettes into emboss or halos.
-- **Depth Grading** — luminance-preserving atmospheric separation: nearer planes
-  slightly warmer and more saturated, distant planes cooler and softer.
+- **Perceptual Depth** — a sense of depth on ordinary 2D video produced purely
+  through light and colour: **no AI, no depth map, no optical flow and no
+  geometric warp**. It combines adaptive lens separation, surface-volume
+  modelling, edge-safe micro depth-of-field, atmospheric bloom, and a
+  luminance-preserving variant of Chromadepth — nearer planes pushed slightly
+  warmer, distant planes slightly cooler, exploiting the eye's own chromatic
+  aberration. Since no pixel is ever displaced, it cannot produce the tearing,
+  doubling or smearing that displacement-based 2.5D effects suffer from, and it
+  looks identical whether the film is playing or paused.
+
+  Internally it layers several stages, all luminance-preserving: *surface-volume
+  modelling* derives shading from smooth depth gradients so curved objects gain
+  perceived volume (restricted to stable surface interiors, so silhouettes never
+  turn into emboss or halos), while *atmospheric separation* keeps nearer planes
+  slightly warmer and more saturated and distant planes cooler and softer. One
+  toggle — no sliders to tune.
 
 ### Color & Tone
 - **Contrast**, **Gamma**, **Saturation**, **Shadow Lift** — global grading.
@@ -154,7 +158,7 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
 | `M` | Mute |
 | `A` | A/B comparison — original, split-screen, normal |
 | `C` | Diagnostics overlay — hidden, essential, full |
-| `G` | GPU debug views (filter masks, depth map) |
+| `G` | GPU debug views — per-filter masks (smoothing, TAA, sharpen, deband…) |
 | `Numpad 4 / 5 / 6` | Aspect ratio narrower / reset / wider |
 | Double-click | Toggle fullscreen |
 
