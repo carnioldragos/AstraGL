@@ -6,7 +6,7 @@
 
 Clean, sharp, smooth playback — every post-processing filter runs live on the GPU.
 
-[⬇️ Download latest release](../../releases/latest) · [📋 What's new in v1.1.0](CHANGELOG.md)
+[⬇️ Download latest release](../../releases/latest) · [📋 Release notes](CHANGELOG.md)
 
 </div>
 
@@ -59,24 +59,6 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
   removes 24fps pan judder, edge-aware so flat areas stay sharp.
 - **Object Motion Blur** — per-pixel directional blur on moving objects (using
   the optical-flow field), independent of camera motion.
-
-### Depth & presentation
-- **Perceptual Depth** — a sense of depth on ordinary 2D video produced purely
-  through light and colour: **no AI, no depth map, no optical flow and no
-  geometric warp**. It combines adaptive lens separation, surface-volume
-  modelling, edge-safe micro depth-of-field, atmospheric bloom, and a
-  luminance-preserving variant of Chromadepth — nearer planes pushed slightly
-  warmer, distant planes slightly cooler, exploiting the eye's own chromatic
-  aberration. Since no pixel is ever displaced, it cannot produce the tearing,
-  doubling or smearing that displacement-based 2.5D effects suffer from, and it
-  looks identical whether the film is playing or paused.
-
-  Internally it layers several stages, all luminance-preserving: *surface-volume
-  modelling* derives shading from smooth depth gradients so curved objects gain
-  perceived volume (restricted to stable surface interiors, so silhouettes never
-  turn into emboss or halos), while *atmospheric separation* keeps nearer planes
-  slightly warmer and more saturated and distant planes cooler and softer. One
-  toggle — no sliders to tune.
 
 ### Color & Tone
 - **Contrast**, **Gamma**, **Saturation**, **Shadow Lift** — global grading.
@@ -145,6 +127,14 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
   render path, color pipeline and bit depth, frame pacing against the display's
   VSync budget, audio route and buffer health. A second press reveals the
   internal view (decoder queues, per-stage GPU timings, audio event counters).
+- **Resume playback** — a film reopens exactly where you left it. The position is
+  saved every few seconds, so an unexpected shutdown costs seconds rather than the
+  whole film. Films barely started are not remembered, and one watched to the end
+  never resumes in the credits.
+- **File associations** — register AstraGL for 16 video formats and open a film on
+  double-click, with a switch in the interface to register or unregister. It is
+  per-user, needs no administrator rights, and repairs itself if you move the
+  portable kit to another folder.
 - Frameless custom title bar, fullscreen, and a polished floating control panel.
 
 ---
@@ -176,7 +166,7 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
 
 ## 🚀 Download & Run
 
-1. Download **`AstraGL Player v1.1.0`** from the [Releases](../../releases)
+1. Download **`AstraGL Player v1.2.0`** from the [Releases](../../releases)
    page — a ready-to-play kit, no installation needed (portable).
 2. Unzip it and run `AstraGL Player.exe`.
 3. On first launch, the app will offer a one-click **"Download FFmpeg"** button.
