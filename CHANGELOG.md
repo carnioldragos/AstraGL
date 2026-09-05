@@ -4,7 +4,6 @@ All notable changes to AstraGL Player are documented here.
 
 ## [1.2.0] — 2026-09-05
 
-First public release.
 
 ### Playback
 - Hardware decoding via WebCodecs (HEVC, AV1, VP9), with an FFmpeg fallback for
