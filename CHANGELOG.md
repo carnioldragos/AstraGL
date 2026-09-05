@@ -47,5 +47,7 @@ All notable changes to AstraGL Player are documented here.
   supports "Open Network Stream".
 
 ### Licensing
-- Free trial with a watermark and 15-minute sessions, unlocked permanently with a
-  one-time purchase. Activation works offline.
+- 14-day trial, fully functional, with no watermark and no session limit.
+  Afterwards the player continues as a demo — 5 minutes of playback per launch,
+  with a watermark — so your files never become unplayable. A one-time purchase
+  removes every limit permanently.
