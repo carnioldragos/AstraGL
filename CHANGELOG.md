@@ -49,7 +49,3 @@ All notable changes to AstraGL Player are documented here.
 ### Licensing
 - Free trial with a watermark and 15-minute sessions, unlocked permanently with a
   one-time purchase. Activation works offline.
-
-### Security
-- The packaged build refuses to start with remote-debugging or inspector switches,
-  and DevTools is disabled there, so shader sources cannot be read out at runtime.
