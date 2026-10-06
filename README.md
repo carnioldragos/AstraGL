@@ -49,16 +49,28 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
 - **Detail Enhance** — multi-radius local-contrast ("clarity") for depth and pop.
 - **Deblock** — conservative 8×8 block-artifact smoothing for low-bitrate sources.
 - **Film Grain** — subtle synthetic grain to mask banding and add texture.
+- **Fine / Medium / Large Detail** — restore shape and texture at 1, 4 and 8 pixel
+  scales with halo control; Fine Detail tells real structure from grain. Negative
+  values soften a scale instead.
+- **Details Auto** — measures how soft the source is and sets the three detail
+  controls by itself, adapting slowly over the film.
+- **Edge AA** — FXAA-style edge reconstruction that smooths jagged lines and curves
+  on sources below 1080p; the default follows the source resolution.
+- **Ambient Fill** — fills the black bars with a soft glow that continues the edges
+  of the picture, like a light behind the screen.
 
 ### Temporal filters (motion-compensated)
 - **MC-TAA (Stability)** — Temporal Anti-Aliasing driven by Lucas–Kanade optical
   flow. Reduces flicker/shimmer and stabilizes the image without ghosting,
   using motion-compensated history (the *same surface* across frames, not the
   same screen pixel).
-- **Pan Shutter** — synthetic camera shutter along the global pan vector;
-  removes 24fps pan judder, edge-aware so flat areas stay sharp.
-- **Object Motion Blur** — per-pixel directional blur on moving objects (using
-  the optical-flow field), independent of camera motion.
+- **Temporal Detail** — recovers fine detail from neighbouring frames on SD, 720p
+  and 1080p sources.
+- **Pan Shutter** — stretches a single real moment along the camera movement,
+  removing 24fps pan judder without vibrating edges or double images.
+- **Object Blur** — camera-style motion blur on objects moving on their own, so
+  fine detail on fast action does not shimmer; pans stay sharp. Pauses itself on
+  hand-drawn animation.
 
 ### Color & Tone
 - **Contrast**, **Gamma**, **Saturation**, **Shadow Lift** — global grading.
@@ -66,19 +78,27 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
   content.
 - **Micro Contrast** — restrained local tonal separation for legacy SD sources,
   without crushing blacks or clipping highlights.
+- **Color Stability** — steadies the slow colour drift of old TV masters.
+- **White Balance** — removes a colour cast measured across the whole film.
 
 ### HDR
 - Automatic detection of **HDR10 / PQ / HLG** and **Dolby Vision**.
 - **HDR → SDR tone mapping** with multiple operators, plus contrast and
   red/yellow recovery controls.
-- **HDR Passthrough** for native output on HDR displays.
+- **HDR Passthrough** — temporarily unavailable until the graphics engine can
+  output HDR; HDR films use tone mapping meanwhile.
 
 ### Motion smoothness
-- **Display Sync** — continuous, refresh-rate-aware frame interpolation that
-  eliminates judder when your refresh rate isn't an integer multiple of the
-  video's fps (e.g. 24fps on a 144Hz screen).
-- **½ Rate** — halves the number of interpolated frames to dial back the
-  "soap-opera" look while keeping cadence smooth.
+- **Display Sync** — massively improved, refresh-rate-aware frame interpolation
+  that eliminates judder on any monitor (e.g. 24fps on a 144Hz screen) and picks
+  its own cadence. It creates full in-between frames on pans and steady motion,
+  and keeps chaotic action flowing with reduced-amplitude interpolation, so fast
+  scenes stay smooth without specks or tearing.
+- **Built for every kind of source** — hand-drawn animation, 25/29.97 fps TV
+  conversions of 24fps films and variable frame rate videos are recognised
+  automatically. Scene cuts, flashes and explosions are detected and shown clean.
+- **Frame-budget watchdog** — keeps playback smooth on lighter GPUs by easing the
+  heaviest options for the current film only.
 
 ### Decoding & formats
 - **WebCodecs hardware decode** for HEVC / H.265, AV1, VP9.
@@ -166,7 +186,7 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
 
 ## 🚀 Download & Run
 
-1. Download **`AstraGL Player v1.2.0`** from the [Releases](../../releases)
+1. Download **`AstraGL Player v1.2.5`** from the [Releases](../../releases)
    page — a ready-to-play kit, no installation needed (portable).
 2. Unzip it and run `AstraGL Player.exe`.
 3. On first launch, the app will offer a one-click **"Download FFmpeg"** button.
