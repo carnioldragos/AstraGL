@@ -151,7 +151,7 @@ All notable changes to AstraGL Player are documented here.
 
 - Sharpening, Detail Enhance and Micro Contrast now have a clearly visible effect.
 
-- New defaults: Sharpen 0.80, Detail Enhance 0.30, Spatial Smooth off, and Film
+- New defaults: Sharpen in Thin Edges mode at 1.50, Detail Enhance 0.30, Spatial Smooth off, and Film
   Grain 0.50 below 1080p.
 
 - **Temporal Detail** now also works on 1080p films (previously up to 720p and
