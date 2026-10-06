@@ -50,8 +50,8 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
   - **Adaptive** — contrast-adaptive Laplacian with soft overshoot compression for
     crisper, more natural detail (higher GPU cost).
   - **Directional** — sharpens luminance across detected edges without changing hue.
-  - **Auto** — picks the mode and strength from the source resolution, cleanup
-    filters and upscale ratio.
+  - **Auto** — uses Adaptive below 4K and RCAS on 4K sources, with the strength
+    set from the source resolution, cleanup filters and upscale ratio.
 - **Deband** — removes banding on gradients (skies, fades) with adaptive dither,
   protected on textured areas.
 - **Detail Enhance** — multi-radius local-contrast ("clarity") for depth and pop.
