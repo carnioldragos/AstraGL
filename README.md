@@ -41,9 +41,17 @@ handles everything from old AVI/DivX rips to 4K HDR HEVC.
 ### Image (spatial) filters
 - **Spatial Smooth** — edge-preserving bilateral filter; cleans film noise while
   keeping fine detail.
-- **RCAS Sharpen** — AMD FSR1-style Robust Contrast Adaptive Sharpening:
-  per-channel weighting, Laplacian noise gate, and 3×3 anti-ringing clamp (zero
-  halos).
+- **Sharpen** — five modes:
+  - **Thin Edges** (default) — fine-radius natural sharpening that makes soft edge
+    transitions look narrower, while suppressing noise and halos.
+  - **RCAS (FSR1)** — AMD FSR1-style Robust Contrast Adaptive Sharpening:
+    per-channel weighting, Laplacian noise gate, and 3×3 anti-ringing clamp (zero
+    halos).
+  - **Adaptive** — contrast-adaptive Laplacian with soft overshoot compression for
+    crisper, more natural detail (higher GPU cost).
+  - **Directional** — sharpens luminance across detected edges without changing hue.
+  - **Auto** — picks the mode and strength from the source resolution, cleanup
+    filters and upscale ratio.
 - **Deband** — removes banding on gradients (skies, fades) with adaptive dither,
   protected on textured areas.
 - **Detail Enhance** — multi-radius local-contrast ("clarity") for depth and pop.
